@@ -54,6 +54,9 @@ functionality is supposed to be.
  
  DOCUMENTATION: 
  [Docs] Description of documentation.  
+ 
+ CHORE: 
+ [Chore] Description of chore. 
 
 ### GitFlow --------------------------------------------------------------------
 This comes from [Atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
