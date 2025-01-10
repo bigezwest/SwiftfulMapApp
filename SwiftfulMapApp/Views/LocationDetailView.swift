@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct LocationDetailView: View {
+    
+    let location: Location
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                TabView  {
+                    ForEach(location.imageNames, id: \.self) { imageName in
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width)
+                            .clipped()
+                    }
+                }
+                .frame(height: 500)
+                .tabViewStyle(PageTabViewStyle())
+            }
+        }
+        .ignoresSafeArea(.all)
     }
 }
 
 #Preview {
-    LocationDetailView()
+    LocationDetailView(location:
+                        LocationsDataService.locations.first!)
 }
