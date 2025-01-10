@@ -21,7 +21,13 @@ struct LocationsListView: View {
                             .frame(width: 45, height: 45)
                             .cornerRadius(10)
                     }
-                    
+                    VStack (alignment: .leading) {
+                        Text(location.name)
+                            .font(.headline)
+                        Text(location.cityName)
+                            .font(.subheadline)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
