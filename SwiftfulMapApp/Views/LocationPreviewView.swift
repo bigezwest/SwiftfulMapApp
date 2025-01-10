@@ -14,14 +14,7 @@ struct LocationPreviewView: View {
     var body: some View {
         VStack {
             imageSection
-            
-            VStack (alignment: .leading, spacing: 4) {
-                Text(location.name)
-                    .font(.title2)
-                    .bold()
-                Text(location.cityName)
-                    .font(.subheadline)
-            }
+            titleSection
         }
     }
 }
@@ -47,5 +40,14 @@ extension LocationPreviewView {
         .padding(6)
         .background(Color.white)
         .cornerRadius(10)
+    }
+    private var titleSection: some View {
+        VStack (alignment: .leading, spacing: 4) {
+            Text(location.name)
+                .font(.title2)
+                .bold()
+            Text(location.cityName)
+                .font(.subheadline)
+        }
     }
 }
