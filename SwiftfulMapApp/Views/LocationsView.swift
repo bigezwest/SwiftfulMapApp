@@ -43,7 +43,8 @@ extension LocationsView {
                 .overlay(alignment: .leading) {
                     Image(systemName: "arrow.down")
                         .font(.headline)
-                        .foregroundColor(.primary)                        .padding(.leading, 10)
+                        .foregroundColor(.primary)
+                        .padding(.leading, 10)
                 }
         }
         .background(.thickMaterial)
