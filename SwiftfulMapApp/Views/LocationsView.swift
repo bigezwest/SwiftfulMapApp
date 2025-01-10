@@ -17,8 +17,8 @@ class LocationsViewModel: ObservableObject {
 }
 
 struct LocationsView: View {
-    
-    @StateObject private var vm = LocationsViewModel()
+
+    @EnvironmentObject private var vm: LocationsViewModel
     
     var body: some View {
         List {
@@ -31,4 +31,5 @@ struct LocationsView: View {
 
 #Preview {
     LocationsView()
+        .environmentObject(LocationsViewModel())
 }
