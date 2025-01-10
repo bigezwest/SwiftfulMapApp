@@ -11,7 +11,20 @@ struct LocationsListView: View {
     @EnvironmentObject private var vm: LocationsViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(vm.locations) { location in
+                HStack {
+                    if let imageName = location.imageNames.first {
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 45, height: 45)
+                            .cornerRadius(10)
+                    }
+                    
+                }
+            }
+        }
     }
 }
 
