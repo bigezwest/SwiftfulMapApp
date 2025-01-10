@@ -40,6 +40,11 @@ extension LocationsView {
                 .foregroundColor(.primary)
                 .frame(height: 55)
                 .frame(maxWidth: .infinity)
+                .overlay(alignment: .leading) {
+                    Image(systemName: "arrow.down")
+                        .font(.headline)
+                        .foregroundColor(.primary)                        .padding(.leading, 10)
+                }
         }
         .background(.thickMaterial)
         .cornerRadius(10)
