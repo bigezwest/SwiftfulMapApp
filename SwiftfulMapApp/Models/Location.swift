@@ -8,13 +8,19 @@
 import Foundation
 import MapKit       // Necessary for CLLocationCoordinate2D
 
-struct Location {
+struct Location: Identifiable {
     let name: String
     let cityName: String
     let coordinates: CLLocationCoordinate2D
     let description: String
     let imageNames: [String]
     let link: String
+    
+    // Conform to Identifiable
+    var id: String {
+        // UUID() would make unique id's for this combination
+        name + cityName
+    }
 }
 
 /*
