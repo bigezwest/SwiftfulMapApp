@@ -13,11 +13,34 @@ struct LocationPreviewView: View {
     
     var body: some View {
         VStack {
-            Text(location.name)
+            ZStack {
+                if let imageName = location.imageNames.first {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(10)
+                }
+            }
+            .padding(6)
+            .background(Color.white)
+            .cornerRadius(10)
+            
+            VStack (alignment: .leading, spacing: 4) {
+                Text(location.name)
+                    .font(.title2)
+                    .bold()
+                Text(location.cityName)
+                    .font(.subheadline)
+            }
         }
     }
 }
 
 #Preview {
-    LocationPreviewView(location: LocationsDataService.locations.first!)
+    ZStack {
+        Color.blue.ignoresSafeArea()
+        LocationPreviewView(location: LocationsDataService.locations.first!)
+    }
+
 }
