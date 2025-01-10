@@ -18,24 +18,8 @@ struct LocationPreviewView: View {
                 titleSection
             }
             VStack (spacing: 8) {
-                Button {
-                    
-                } label: {
-                    Text("Learn More")
-                        .font(.headline)
-                        .frame(width: 125, height: 35)
-                }
-                .buttonStyle(.borderedProminent)
-
-                Button {
-                    
-                } label: {
-                    Text("Next")
-                        .font(.headline)
-                        .frame(width: 125, height: 35)
-                }
-                .buttonStyle(.bordered)
-
+                learnMoreButton
+                nextButton
             }
         }
     }
@@ -71,5 +55,26 @@ extension LocationPreviewView {
             Text(location.cityName)
                 .font(.subheadline)
         }
+    }
+    private var learnMoreButton: some View {
+        Button {
+            
+        } label: {
+            Text("Learn More")
+                .font(.headline)
+                .frame(width: 125, height: 35)
+        }
+        .buttonStyle(.borderedProminent)
+    }
+    private var nextButton: some View {
+        Button {
+            
+        } label: {
+            Text("Next")
+                .font(.headline)
+                .frame(width: 125, height: 35)
+        }
+        .buttonStyle(.bordered)
+
     }
 }
