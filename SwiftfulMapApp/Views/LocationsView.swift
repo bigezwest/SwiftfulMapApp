@@ -45,7 +45,9 @@ extension LocationsView {
                         Image(systemName: "arrow.down")
                             .font(.headline)
                             .foregroundColor(.primary)
-                            .padding(.leading, 10)
+                            .padding()
+                            .rotationEffect(Angle(degrees:
+                                vm.showLocationsList ? 180 : 0))
                     }
                 }
             if vm.showLocationsList {
