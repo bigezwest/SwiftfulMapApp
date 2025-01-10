@@ -8,7 +8,7 @@
 import Foundation
 import MapKit       // Necessary for CLLocationCoordinate2D
 
-struct Location: Identifiable {
+struct Location: Identifiable, Equatable {
     let name: String
     let cityName: String
     let coordinates: CLLocationCoordinate2D
@@ -20,6 +20,11 @@ struct Location: Identifiable {
     var id: String {
         // UUID() would make unique id's for this combination
         name + cityName
+    }
+    
+    // Equateable
+    static func == (lhs: Location, rhs: Location) -> Bool {
+        lhs.id == rhs.id
     }
 }
 
