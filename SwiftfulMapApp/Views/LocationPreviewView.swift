@@ -12,7 +12,7 @@ struct LocationPreviewView: View {
     let location: Location
     
     var body: some View {
-        VStack {
+        VStack (spacing: 16) {
             imageSection
             titleSection
         }
