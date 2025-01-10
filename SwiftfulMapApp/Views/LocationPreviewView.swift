@@ -13,18 +13,7 @@ struct LocationPreviewView: View {
     
     var body: some View {
         VStack {
-            ZStack {
-                if let imageName = location.imageNames.first {
-                    Image(imageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 100, height: 100)
-                        .cornerRadius(10)
-                }
-            }
-            .padding(6)
-            .background(Color.white)
-            .cornerRadius(10)
+            imageSection
             
             VStack (alignment: .leading, spacing: 4) {
                 Text(location.name)
@@ -42,5 +31,21 @@ struct LocationPreviewView: View {
         Color.blue.ignoresSafeArea()
         LocationPreviewView(location: LocationsDataService.locations.first!)
     }
+}
 
+extension LocationPreviewView {
+    private var imageSection: some View {
+        ZStack {
+            if let imageName = location.imageNames.first {
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .cornerRadius(10)
+            }
+        }
+        .padding(6)
+        .background(Color.white)
+        .cornerRadius(10)
+    }
 }
