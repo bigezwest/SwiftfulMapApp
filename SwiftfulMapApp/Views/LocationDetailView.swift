@@ -16,7 +16,18 @@ struct LocationDetailView: View {
             VStack {
                 imageSection
                     .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
-                
+                VStack (alignment: .leading, spacing: 16) {
+                    VStack (alignment: .leading, spacing: 8) {
+                        Text(location.name)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        Text(location.cityName)
+                            .font(.title)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             }
         }
         .ignoresSafeArea(.all)
