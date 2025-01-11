@@ -31,6 +31,7 @@ struct LocationDetailView: View {
             }
         }
         .ignoresSafeArea(.all)
+        .background(.ultraThinMaterial)
     }
 }
 
@@ -87,6 +88,7 @@ extension LocationDetailView {
                     .shadow(radius: 10)
             }
         }
+            .allowsHitTesting(false)
             .aspectRatio(1, contentMode: .fit)
             .cornerRadius(30)
     }
