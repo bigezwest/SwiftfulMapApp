@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct LocationDetailView: View {
     
+    @EnvironmentObject private var vm: LocationsViewModel
     let location: Location
     
     var body: some View {
@@ -20,6 +22,9 @@ struct LocationDetailView: View {
                     titleSection
                     Divider()
                     descriptionSection
+                    Divider()
+                    mapLayer
+                    
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -31,7 +36,8 @@ struct LocationDetailView: View {
 
 #Preview {
     LocationDetailView(location:
-                        LocationsDataService.locations.first!)
+        LocationsDataService.locations.first!)
+            .environmentObject(LocationsViewModel())
 }
 
 extension LocationDetailView {
@@ -70,5 +76,18 @@ extension LocationDetailView {
                     .tint(.blue)
             }
         }
+    }
+    private var mapLayer: some View {
+        Map(coordinateRegion: .constant(MKCoordinateRegion(
+            center: location.coordinates,
+            span: vm.mapSpan)),
+            annotationItems: [location]) { location in
+            MapAnnotation(coordinate: location.coordinates) {
+                LocationMapAnnotationView()
+                    .shadow(radius: 10)
+            }
+        }
+            .aspectRatio(1, contentMode: .fit)
+            .cornerRadius(30)
     }
 }
