@@ -60,6 +60,9 @@ functionality is supposed to be.
  
  STYLING: 
  [Style] Description of styling. 
+ 
+ REFACTOR: 
+ [Refactor] Desription of refactoring.
 
 ### GitFlow --------------------------------------------------------------------
 This comes from [Atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
