@@ -57,6 +57,9 @@ functionality is supposed to be.
  
  CHORE: 
  [Chore] Description of chore. 
+ 
+ STYLING: 
+ [Style] Description of styling. 
 
 ### GitFlow --------------------------------------------------------------------
 This comes from [Atlassian.com](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
