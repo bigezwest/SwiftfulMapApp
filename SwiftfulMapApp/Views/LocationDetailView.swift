@@ -14,17 +14,7 @@ struct LocationDetailView: View {
     var body: some View {
         ScrollView {
             VStack {
-                TabView  {
-                    ForEach(location.imageNames, id: \.self) { imageName in
-                        Image(imageName)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: UIScreen.main.bounds.width)
-                            .clipped()
-                    }
-                }
-                .frame(height: 500)
-                .tabViewStyle(PageTabViewStyle())
+                imageSection
             }
         }
         .ignoresSafeArea(.all)
@@ -34,4 +24,20 @@ struct LocationDetailView: View {
 #Preview {
     LocationDetailView(location:
                         LocationsDataService.locations.first!)
+}
+
+extension LocationDetailView {
+    private var imageSection: some View {
+        TabView  {
+            ForEach(location.imageNames, id: \.self) { imageName in
+                Image(imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: UIScreen.main.bounds.width)
+                    .clipped()
+            }
+        }
+        .frame(height: 500)
+        .tabViewStyle(PageTabViewStyle())
+    }
 }
