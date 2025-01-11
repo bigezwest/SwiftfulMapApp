@@ -18,6 +18,8 @@ struct LocationDetailView: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
                 VStack (alignment: .leading, spacing: 16) {
                     titleSection
+                    Divider()
+                    descriptionSection
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -55,6 +57,18 @@ extension LocationDetailView {
             Text(location.cityName)
                 .font(.title)
                 .foregroundColor(.secondary)
+        }
+    }
+    private var descriptionSection: some View {
+        VStack (alignment: .leading, spacing: 16) {
+            Text(location.description)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            if let url = URL(string: location.link) {
+                Link("Read more on Wikipedia", destination: url)
+                    .font(.headline)
+                    .tint(.blue)
+            }
         }
     }
 }
