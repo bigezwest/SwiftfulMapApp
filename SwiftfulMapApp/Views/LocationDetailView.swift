@@ -17,14 +17,7 @@ struct LocationDetailView: View {
                 imageSection
                     .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
                 VStack (alignment: .leading, spacing: 16) {
-                    VStack (alignment: .leading, spacing: 8) {
-                        Text(location.name)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text(location.cityName)
-                            .font(.title)
-                            .foregroundColor(.secondary)
-                    }
+                    titleSection
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
@@ -52,5 +45,16 @@ extension LocationDetailView {
         }
         .frame(height: 500)
         .tabViewStyle(PageTabViewStyle())
+    }
+
+    private var titleSection: some View {
+        VStack (alignment: .leading, spacing: 8) {
+            Text(location.name)
+                .font(.largeTitle)
+                .fontWeight(.bold)
+            Text(location.cityName)
+                .font(.title)
+                .foregroundColor(.secondary)
+        }
     }
 }
