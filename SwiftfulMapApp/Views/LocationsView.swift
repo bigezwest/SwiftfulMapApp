@@ -91,6 +91,7 @@ extension LocationsView {
                     LocationPreviewView(location: location)
                         .shadow(color: Color.black.opacity(0.3), radius: 20)
                         .padding()
+                        .frame(maxWidth: maxWidthForIpad)
                         .transition(
                             .asymmetric(
                                 insertion: .move(edge: .trailing),
